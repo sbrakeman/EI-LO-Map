@@ -1,0 +1,42 @@
+
+<!-- howdy/templates/index.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Howdy!</title>
+		<script src="http://highcharttable.org/js/highcharts.js"></script>
+<script src="http://code.highcharttable.org/master/jquery.highchartTable-min.js"></script>
+<script src="http://highcharttable.org/js/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highcharts/5.0.12/css/highcharts.css" />
+
+    </head>
+    <body>
+
+        <table class="highchart" data-graph-container="highchart-container" data-graph-type="column">
+        <caption> Hi Setri </caption>
+        {{lo_counts}}
+		  <thead>
+		      <tr>
+		          <th>LO</th>
+		          <th>Count</th>
+		      </tr>
+		   </thead>
+		   <tbody>
+
+        	{% for LO, lnum in lo_counts.items %}
+        	    <tr> 
+        	    	<td> {{LO}} </td> 
+        	    	<td> {{lnum}} </td> 
+        	    </tr>
+			{% endfor %}
+		  </tbody>
+		</table>
+
+
+     <a href="/about/">About Me</a>
+
+     <script> $(document).ready(function() {$('table.highchart').highchartTable(); }); </script>
+
+    </body>
+</html>
